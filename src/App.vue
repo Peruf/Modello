@@ -1,12 +1,24 @@
 <template>
   <div id="app">
-    
+    <md-app>
+      <navbar slot="md-app-toolbar"></navbar>
+      <home></home>
+      <md-app-content>
+        <router-view></router-view> 
+      </md-app-content>
+    </md-app>
   </div>
 </template>
 
 <script>
+import home from '@/components/Homepage.vue'
+import navbar from '@/components/Navbar.vue'
   export default {
-    name: 'App'
+    name: 'App',
+    components:{
+      'home': home,
+      'navbar': navbar,
+    }
   }
 </script>
 
@@ -14,7 +26,7 @@
 <style>
 .link{
   padding: 10px;
-  background-color: rgb(115, 211, 243);
+  background-color: LightBlue;
   margin: 10px;
   border-radius:10px;
   color: white !important;
@@ -28,6 +40,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
