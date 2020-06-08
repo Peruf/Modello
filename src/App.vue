@@ -1,22 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App'
   }
-}
 </script>
 
+
 <style>
+.link{
+  padding: 10px;
+  background-color: rgb(115, 211, 243);
+  margin: 10px;
+  border-radius:10px;
+  color: white !important;
+}
+.link:hover{
+  background-color: #dddddd;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
