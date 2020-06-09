@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    
     <md-app>
       <navbar slot="md-app-toolbar"></navbar>
       <home></home>
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+
 import home from '@/components/Homepage.vue'
 import navbar from '@/components/Navbar.vue'
   export default {
@@ -25,15 +27,9 @@ import navbar from '@/components/Navbar.vue'
 
 <style>
 .link{
-  padding: 10px;
-  background-color: LightBlue;
-  margin: 10px;
-  border-radius:10px;
-  color: white !important;
+  border-radius:10px !important;
 }
-.link:hover{
-  background-color: #dddddd;
-}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

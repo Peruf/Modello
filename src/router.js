@@ -51,7 +51,5 @@ export default new VueRouter({
             name: '5',
             component: page5,
         }
-    ],
-    linkActiveClass
-
+    ]
 })
