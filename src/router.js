@@ -7,6 +7,7 @@ import page3 from './pages/page3.vue'
 import page4 from './pages/page4.vue'
 import page5 from './pages/page5.vue'
 import home from '@/components/Homepage.vue'
+import game from '@/pages/game.vue'
 
 Vue.use(VueRouter)
 Vue.use(VueMaterial)
@@ -20,6 +21,7 @@ Vue.material.router.linkActiveClass = linkActiveClass
 
 
 export default new VueRouter({
+    mode: 'history',
     routes: [
         {
             path: '/',
@@ -50,6 +52,11 @@ export default new VueRouter({
             path: '/5',
             name: '5',
             component: page5,
+        },
+        {
+            path: '/game/:name',
+            name: 'Game',
+            component: game
         }
     ]
 })

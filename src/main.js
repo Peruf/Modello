@@ -4,7 +4,7 @@ import App from './App.vue'
 import router from './router.js'
 
 import 'vue-material/dist/vue-material.min.css'
-import 'vue-material/dist/theme/default-dark.css'
+import 'vue-material/dist/theme/black-green-light.css'
 
 Vue.use(VueMaterial)
 
@@ -16,3 +16,4 @@ new Vue({
   render: h => h(App),
   router,
 })
+
