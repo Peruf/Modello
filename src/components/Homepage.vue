@@ -1,13 +1,19 @@
 <template>
   <div class="home">
-    <md-list>
-      <div v-for="game in games" :key="game.name">
-        <md-list-item :to="'/game/' + game.name">
-          <span>{{game.name}}</span>
-        </md-list-item>
-        <md-divider></md-divider>
+    <div class="md-layout md-gutter md-alignment-top-left">
+      <div class="md-layout-item md-medium-size-33 md-small-size-50 md-xsmall-size-100">
+        <md-card class="md-primary card">
+          <div v-for="game in games" :key="game.name" class="md-layout md-alignmet-central-left">
+            <md-card-cover md-text-scrim>
+              <md-card-media  class="" md-ratio="3:4">
+                <img :src="game.images.medium" class="card-image">
+                <md-button :to="'/game/' + game.name" class="md-accent">{{game.name}}</md-button>
+              </md-card-media>
+            </md-card-cover>
+          </div>
+        </md-card>
       </div>
-    </md-list>
+    </div>
     <md-button class="md-accent md-fixed" @click="loadMore()">Load more</md-button>
     <md-progress-spinner md-mode="indeterminate" :md-diameter="20" :md-stroke="2" v-if="loading" class="md-accent" style="margin-top:1em;"></md-progress-spinner>
   </div>
@@ -45,6 +51,13 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
+.card{
+  max-width: 300px;
+  height: auto;
+}
+.card-image{
+  padding: 5%;
+}
+</style>>
 
-</style>

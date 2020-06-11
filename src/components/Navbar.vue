@@ -30,7 +30,7 @@
         },
         methods:{
             search: function(text){
-                this.searchOptions = dataservice.searchGame(text.toLowerCase());
+                this.searchOptions = dataservice.searchGame(text);
             },
             go: function(found){
                 this.$router.push({ path: '/game/' + found});

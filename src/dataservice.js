@@ -18,9 +18,10 @@ export default{
             //se la string text corrisponde all'inizio del nome del pokemon allora torno l'elemento, indexOf ritorna il primo indice a cui c'è l'elemento passato
             var i;
             console.log(text)
-            for(i = 0; i< data.data.games; i++)
-                return data.data.games[i].name.filter((element => element.name.indexOf(text) == 0)).map(element => element.name);
-            
+            for(i = 0; i< data.data.games.length; i++){
+                console.log(data.data.games[i]);
+                return data.data.games[i].filter((element => element.name.indexOf(text) == 0));//.map(element => element.name);
+            }
         });}
     }
 }

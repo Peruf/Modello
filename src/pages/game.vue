@@ -64,7 +64,7 @@ export default {
         load: function(){
             dataservice.getGame(this.$route.params.name).then((data) => {
                 this.game = data.data.games[0];
-                console.log(this.game);
+                //console.log(this.game);
             });
         }
     }
