@@ -1,19 +1,18 @@
 <template>
   <div class="home">
     <div class="md-layout md-gutter md-size-100">
-        <md-card class="md-primary card md-layout-item md-medium-size-33 md-small-size-40 md-xsmall-size-100" v-for="game in games" :key="game.name">
-          <div class="md-layout">
+        <md-card class="md-primary card md-layout-item md-medium-size-33 md-small-size-50 md-xsmall-size-40" v-for="game in games" :key="game.name">
+          <md-card-media-cover class="md-layout">
             <md-card-media>
-              <img :src="game.images.original" class="card-image">
+              <img :src="game.images.large" class="card-image"><br>
               <md-button :to="'/game/' + game.name" class="md-accent">{{game.name}}</md-button>
             </md-card-media>
-          </div>
+          </md-card-media-cover>
         </md-card>
       
     </div>
 
-    
-    <md-button class="md-accent md-fixed" @click="loadMore()">Load more</md-button>
+
     <md-progress-spinner md-mode="indeterminate" :md-diameter="20" :md-stroke="2" v-if="loading" class="md-accent" style="margin-top:1em;"></md-progress-spinner>
   </div>
 </template>
@@ -31,20 +30,11 @@ export default {
     }
   },
   created: function() {
+    this.loading = true;
     DataService.getGames().then(data => {
-      this.games = data.data.games;
-      console.log(this.games);
-    });
-  },
-  methods: {
-    loadMore(){
-      this.loading = true;
-      this.limit += 20;
-      DataService.getGames(this.limit).then(data => {
       this.games = data.data.games;
       this.loading = false;
     });
-    }
   }
 }
 
@@ -54,12 +44,15 @@ export default {
 <style scoped>
 .card{
   margin-top: 10px;
+  max-height: 200px;
+  max-width: auto;
 }
 .card-image{
-  max-width: 250px;
-  height: auto;
-  padding: 5%;
+  margin-top: 5%;
+  height: 150px;
+  width: auto;
 }
+
 
 
 </style>>

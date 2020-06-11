@@ -1,5 +1,5 @@
 <template>
-    <md-app-toolbar class="md-primary">
+    <md-app-toolbar class="md-primary nav">
         <md-button to="/" class="md-icon-button ">
             <md-icon>home</md-icon>
         </md-button>
