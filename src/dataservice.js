@@ -2,10 +2,10 @@ import axios from 'axios'
 
 export default{
     getGames(limit){  //le chiamate sono asincrone
-        return axios.get("https://www.boardgameatlas.com/api/search?limit=" + (limit || 20) + "&client_id=vuxWmH7cLW"); 
+        return axios.get("https://www.boardgameatlas.com/api/search?limit=" + (limit || 20) + "&client_id=vuxWmH7cLW&ordered_by=name"); 
      },
     getGame(name){
-        return axios.get("https://www.boardgameatlas.com/api/search?name=" + name + "&client_id=vuxWmH7cLW");
+        return axios.get("https://www.boardgameatlas.com/api/search?name=" + name + "&client_id=vuxWmH7cLW&ordered_by=name");
     },
     searchGame(text){
         if(text.length < 2 || !text){
